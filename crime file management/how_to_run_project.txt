@@ -1,0 +1,29 @@
+## Build details 
+ #### Developed and Tested on:
+
+* Netbeans Version: NetBeans IDE 8.1 
+* Java: 1.8.0_101; Java HotSpot(TM) 64-Bit Server VM 25.101-b13
+* Runtime: Java(TM) SE Runtime Environment 1.8.0_101-b13
+* System: Ubuntu Gnome 16.04 LTS 64-bit
+* For Database : use Oracle 11g (PL/SQL) 
+
+1. Open Project in Netbeans 
+2. Include ojdbc14.jar and ojdbc6.jar for database
+2. Connect to Apache Server 8.0.1
+3. Add Netbeans Connector Extension in Chrome
+3. Now for database, Open Terminal and commands to use oracle and and to store database
+	- sqlplus /nolog
+	if error SP2-1502: The HTTP proxy server specified by http_proxy is not accessible
+		then  use command - unset no_proxy
+	SQL> connect root/root as sysdba;
+	SQL> EXEC DBMS_XDB.SETLISTENERLOCALACCESS(FALSE);  
+	SQL> grant all privileges to root identified by root;
+	SQL> CONNECT root/root as sysdba
+	SQL> @table.sql
+	SQL> @trigger2remove
+	SQL> @trigger1compl
+	If want to insert values from database then insert as per table schema
+	Database part is done.
+	To run Project, Run it from Netbeans and default browser is set to be Chrome
+
+
